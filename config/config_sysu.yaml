@@ -1,0 +1,46 @@
+## Note: color = rgb = visible, thermal = ir = infrared.
+
+## dataset parameters
+dataset: sysu                # sysu or regdb
+dataset_path: ../../dataset/ # dataset root path
+mode: all                    # all or indoor (sysu test), thermaltovisible or visibletothermal (regdb test)
+workers: 4                   # number of data loading workers (default: 4)
+dataset_num_size: 1          # the multiple of dataset size per trainloader
+
+## model parameters
+arch: resnet50               # network baseline
+pool_dim: 2048               # pooling dim: 2048 for resnet50
+per_add_iters: 1             # number of iters adding to coefficient of GRL for each training batch
+lambda_sk: 25                # hyper-parameter for Sinkhorn-Knopp algorithm
+
+## optimizer parameters
+optim: adam                  # optimizer: adam
+lr: 0.0035                   # learning rate: 0.0035 for adam
+
+## normal parameters
+file_name: otla-reid/        # config file name
+setting: semi-supervised     # training setting: supervised or semi-supervised or unsupervised
+train_visible_image_path: ../../dataset/SYSU-MM01/train_rgb_resized_spcl_uda_market2sysumm01rgb_img.npy   # the stored visible image path getting from USL-ReID or UDA-ReID for unsupervised setting
+train_visible_label_path: ../../dataset/SYSU-MM01/train_rgb_resized_spcl_uda_market2sysumm01rgb_label.npy   # the stored visible label path getting from USL-ReID or UDA-ReID for unsupervised setting
+seed: 0                      # random seed
+gpu: 1                       # gpu device ids for CUDA_VISIBLE_DEVICES
+model_path: save_model/      # model save path
+log_path: log/               # log save path
+vis_log_path: vis_log/       # tensorboard log save path
+save_epoch: 10               # save model every few epochs
+img_w: 144                   # image width
+img_h: 288                   # image height
+train_batch_size: 4          # training batch size: 4
+num_pos: 8                   # number of pos per identity for each modality: 8
+test_batch_size: 64          # testing batch size
+start_epoch: 0               # start training epoch
+end_epoch: 61                # end training epoch
+eval_epoch: 1                # test for every eval_epoch epochs
+
+## loss parameters
+margin: 0.3                  # triplet loss margin
+lambda_vr: 0.1               # coefficient of prediction alignment loss
+lambda_rv: 0.5               # coefficient of prediction alignment loss
+
+
+
