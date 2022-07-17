@@ -182,14 +182,3 @@ def tester(args, epoch, main_net, test_mode, gall_label, gall_loader, query_labe
         writer.add_scalar("mINP", mINP, epoch)
 
     return cmc, mAP, mINP
-
-
-
-
-
-
-
-
-
-
-
