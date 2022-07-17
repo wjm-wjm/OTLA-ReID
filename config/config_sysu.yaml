@@ -41,6 +41,3 @@ eval_epoch: 1                # test for every eval_epoch epochs
 margin: 0.3                  # triplet loss margin
 lambda_vr: 0.1               # coefficient of prediction alignment loss
 lambda_rv: 0.5               # coefficient of prediction alignment loss
-
-
-
