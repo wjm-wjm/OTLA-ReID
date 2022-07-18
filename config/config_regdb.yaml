@@ -12,7 +12,7 @@ dataset_num_size: 2          # the multiple of dataset size per trainloader
 arch: resnet50               # network baseline
 pool_dim: 2048               # pooling dim: 2048 for resnet50
 per_add_iters: 5             # number of iters adding to coefficient of GRL for each training batch
-lambda_sk: 25                # hyper-parameter for Sinkhorn-Knopp algorithm
+lambda_sk: 25                # hyperparameter for Sinkhorn-Knopp algorithm
 
 ## optimizer parameters
 optim: adam                  # optimizer: adam

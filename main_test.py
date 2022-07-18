@@ -84,7 +84,12 @@ def main_worker(args, args_main):
     print("  ----------------------------")
     print("Data loading time:\t {:.3f}".format(time.time() - end))
 
-    n_class = 1000  # initial value
+    if args.dataset == "sysu":
+        n_class = 395  # initial value
+    elif args.dataset == "regdb":
+        n_class = 206  # initial value
+    else:
+        n_class = 1000  # initial value
     epoch = 0  # initial value
 
     ## resume checkpoints
@@ -92,9 +97,11 @@ def main_worker(args, args_main):
         resume_path = args_main.resume_path
         if os.path.isfile(resume_path):
             checkpoint = torch.load(resume_path)
-            n_class = checkpoint["n_class"]
-            epoch = checkpoint["epoch"]
-            print("==> Loading checkpoint {} (epoch {}, number of classes {})".format(resume_path, checkpoint["epoch"], checkpoint["n_class"]))
+            if "n_class" in checkpoint.keys():
+                n_class = checkpoint["n_class"]
+            if "epoch" in checkpoint.keys():
+                epoch = checkpoint["epoch"]
+            print("==> Loading checkpoint {} (epoch {}, number of classes {})".format(resume_path, epoch, n_class))
         else:
             print("==> No checkpoint is found at {} (epoch {}, number of classes {})".format(resume_path, epoch, n_class))
     else:
@@ -103,7 +110,10 @@ def main_worker(args, args_main):
     ## build model
     main_net = BaseResNet(pool_dim=args.pool_dim, class_num=n_class, per_add_iters=args.per_add_iters, arch=args.arch)
     if args_main.resume and os.path.isfile(resume_path):
-        main_net.load_state_dict(checkpoint["main_net"])
+        if "main_net" in checkpoint.keys():
+            main_net.load_state_dict(checkpoint["main_net"])
+        elif "net" in checkpoint.keys():
+            main_net.load_state_dict(checkpoint["net"])
     main_net.to(device)
 
     # start testing

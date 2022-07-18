@@ -118,7 +118,6 @@ def main_worker(args, args_main):
     gall_loader = data.DataLoader(gallset, batch_size=args.test_batch_size, shuffle=False, num_workers=args.workers)
     query_loader = data.DataLoader(queryset, batch_size=args.test_batch_size, shuffle=False, num_workers=args.workers)
 
-    assert len(np.unique(trainset.train_color_label)) == len(np.unique(trainset.train_thermal_label))
     n_class = len(np.unique(trainset.train_color_label))  # number of classes
     n_rgb = len(trainset.train_color_label)  # number of visible images
     n_ir = len(trainset.train_thermal_label)  # number of infrared images
@@ -144,10 +143,10 @@ def main_worker(args, args_main):
         resume_path = args_main.resume_path
         if os.path.isfile(resume_path):
             checkpoint = torch.load(resume_path)
-            start_epoch = checkpoint["epoch"]
-            assert n_class == checkpoint["n_class"]
+            if "epoch" in checkpoint.keys():
+                start_epoch = checkpoint["epoch"]
             main_net.load_state_dict(checkpoint["main_net"])
-            print("==> Loading checkpoint {} (epoch {})".format(resume_path, checkpoint["epoch"]))
+            print("==> Loading checkpoint {} (epoch {})".format(resume_path, start_epoch))
         else:
             print("==> No checkpoint is found at {}".format(resume_path))
     print("start epoch: {}, end epoch: {}".format(start_epoch, end_epoch))
