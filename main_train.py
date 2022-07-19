@@ -26,10 +26,10 @@ def main_worker(args, args_main):
     end_epoch = args.end_epoch
 
     ## set gpu id and seed id
-    set_seed(args.seed)
     os.environ["CUDA_VISIBLE_DEVICES"] = str(args.gpu)
     torch.backends.cudnn.benchmark = True  # accelerate the running speed of convolution network
     device = "cuda" if torch.cuda.is_available() else "cpu"
+    set_seed(args.seed, cuda=torch.cuda.is_available())
 
     ## set file
     if not os.path.isdir(args.dataset + "_" + args.setting + "_" + args.file_name):
