@@ -287,6 +287,8 @@ class Logger(object):
 
 
 def set_seed(seed, cuda=True):
+    random.seed(seed)
+    np.random.RandomState(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
     if cuda:
