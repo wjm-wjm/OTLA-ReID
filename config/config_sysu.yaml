@@ -18,10 +18,10 @@ optim: adam                  # optimizer: adam
 lr: 0.0035                   # learning rate: 0.0035 for adam
 
 ## normal parameters
-file_name: otla-reid/        # config file name
+file_name: otla-reid/        # log file name
 setting: semi-supervised     # training setting: supervised or semi-supervised or unsupervised
-train_visible_image_path: ../../dataset/SYSU-MM01/train_rgb_resized_spcl_uda_market2sysumm01rgb_img.npy   # the stored visible image path getting from USL-ReID or UDA-ReID for unsupervised setting
-train_visible_label_path: ../../dataset/SYSU-MM01/train_rgb_resized_spcl_uda_market2sysumm01rgb_label.npy   # the stored visible label path getting from USL-ReID or UDA-ReID for unsupervised setting
+train_visible_image_path: ../../dataset/SYSU-MM01/train_rgb_resized_spcl_uda_market2sysumm01rgb_img.npy   # the stored visible image path getting from USL-ReID or UDA-ReID methods for unsupervised setting
+train_visible_label_path: ../../dataset/SYSU-MM01/train_rgb_resized_spcl_uda_market2sysumm01rgb_label.npy   # the stored visible label path getting from USL-ReID or UDA-ReID methods for unsupervised setting
 seed: 0                      # random seed
 gpu: 0                       # gpu device ids for CUDA_VISIBLE_DEVICES
 model_path: save_model/      # model save path
@@ -34,8 +34,8 @@ train_batch_size: 4          # training batch size: 4
 num_pos: 8                   # number of pos per identity for each modality: 8
 test_batch_size: 64          # testing batch size
 start_epoch: 0               # start training epoch
-end_epoch: 61                # end training epoch
-eval_epoch: 1                # test for every eval_epoch epochs
+end_epoch: 81                # end training epoch
+eval_epoch: 1                # testing epochs
 
 ## loss parameters
 margin: 0.3                  # triplet loss margin
