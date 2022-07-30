@@ -97,10 +97,11 @@ def main_worker(args, args_main):
         resume_path = args_main.resume_path
         if os.path.isfile(resume_path):
             checkpoint = torch.load(resume_path)
-            if "n_class" in checkpoint.keys():
-                n_class = checkpoint["n_class"]
-            if "epoch" in checkpoint.keys():
-                epoch = checkpoint["epoch"]
+            if "main_net" in checkpoint.keys():
+                n_class = checkpoint["main_net"]["classifier.weight"].size(0)
+            elif "net" in checkpoint.keys():
+                n_class = checkpoint["net"]["classifier.weight"].size(0)
+            epoch = checkpoint["epoch"]
             print("==> Loading checkpoint {} (epoch {}, number of classes {})".format(resume_path, epoch, n_class))
         else:
             print("==> No checkpoint is found at {} (epoch {}, number of classes {})".format(resume_path, epoch, n_class))
