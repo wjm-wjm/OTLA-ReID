@@ -7,7 +7,7 @@ Visible-Infrared Person Re-Identification", *ECCV 2022*. This work is done at th
 
 **[2022-7-21]** Update some critical informtion of REAMDE.md.
 
-**[2022-9-22]** Update the code of SpCL-master, which can be used to generator pseudo labels for visible modality for unsupervised setting.
+**[2022-9-22]** Update the code of SpCL-master, which can be used to generator pseudo labels of visible modality for unsupervised setting.
 
 ## Requirements
 + python 3.7.11
