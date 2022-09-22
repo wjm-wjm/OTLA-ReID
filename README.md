@@ -48,6 +48,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 python examples/spcl_train_uda.py -ds market1501 -d
 cd OTLA-ReID/SpCL-master/
 CUDA_VISIBLE_DEVICES=0,1,2,3 python examples/spcl_train_uda.py -ds market1501 -dt regdb_rgb --logs-dir logs/spcl_uda/regdbTOsysumm01_rgb_resnet50 --epochs 51 --iters 50
 ```
+The generated visible images and visible pseudo labels are both saved under the dataset directory.
 
 ## Testing
 If you want to test the trained model(s), run following command:
