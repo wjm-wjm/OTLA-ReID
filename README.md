@@ -7,6 +7,8 @@ Visible-Infrared Person Re-Identification", *ECCV 2022*. This work is done at th
 
 **[2022-7-21]** Update some critical informtion of REAMDE.md.
 
+**[2022-9-22]** Update the code of SpCL-master, which can be used to generator pseudo labels for visible modality for unsupervised setting.
+
 ## Requirements
 + python 3.7.11
 + numpy 1.21.4
@@ -35,6 +37,17 @@ cd OTLA-ReID/
 python main_train.py --config config/config_sysu.yaml
 ```
 
+Here, we give an example of running SpCL to generate visible pseudo label in SpCL-master. However, you firstly need to install environment which can be found in [SpCL](https://github.com/yxgeee/SpCL):
++ For SYSU-MM01:
+```shell
+cd OTLA-ReID/SpCL-master/
+CUDA_VISIBLE_DEVICES=0,1,2,3 python examples/spcl_train_uda.py -ds market1501 -dt sysumm01_rgb --logs-dir logs/spcl_uda/market1501TOsysumm01_rgb_resnet50 --epochs 51 --iters 800
+```
++ For RegDB:
+```shell
+cd OTLA-ReID/SpCL-master/
+CUDA_VISIBLE_DEVICES=0,1,2,3 python examples/spcl_train_uda.py -ds market1501 -dt regdb_rgb --logs-dir logs/spcl_uda/regdbTOsysumm01_rgb_resnet50 --epochs 51 --iters 50
+```
 
 ## Testing
 If you want to test the trained model(s), run following command:
@@ -45,4 +58,4 @@ python main_test.py --config config/config_sysu.yaml --resume --resume_path ./sy
 
 
 ## Acknowledgements
-This work is developed based on repositories of [DDAG(ECCV 2020)](https://github.com/mangye16/DDAG), [SpCL(NIPS 2020)](https://github.com/yxgeee/SpCL), [MMT(ICLR 2020)](https://github.com/yxgeee/MMT), [HCD(ICCV 2021)](https://github.com/tangshixiang/HCD). We sincerely thanks all developers of these high-quality repositories.
+This work is developed based on repositories of [SeLa(ICLR 2020)](https://github.com/yukimasano/self-label) [DDAG(ECCV 2020)](https://github.com/mangye16/DDAG), [SpCL(NIPS 2020)](https://github.com/yxgeee/SpCL), [MMT(ICLR 2020)](https://github.com/yxgeee/MMT), [HCD(ICCV 2021)](https://github.com/tangshixiang/HCD). We sincerely thanks all developers of these high-quality repositories.

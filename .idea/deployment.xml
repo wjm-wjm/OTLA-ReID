@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="wjm@10.1.200.3:22 password" remoteFilesAllowedToDisappearOnAutoupload="false">
+  <component name="PublishConfigData" serverName="test@172.18.116.34:22 password" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
       <paths name="luyu@10.12.41.22:22 password">
         <serverdata>
@@ -9,10 +9,17 @@
           </mappings>
         </serverdata>
       </paths>
+      <paths name="test@172.18.116.34:22 password">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/test/pytorch/wjm/code/OTLA-ReID" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="wjm@10.1.200.3:22 password">
         <serverdata>
           <mappings>
-            <mapping deploy="/home/wjm/wjm/code/OTLA-ReID" local="$PROJECT_DIR$" />
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
@@ -51,6 +58,13 @@
           </mappings>
         </serverdata>
       </paths>
+      <paths name="wjm@172.23.148.60:22 key (3)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/wjm/wjm/code/OTLA-ReID" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="wjm@172.23.148.62:22 key">
         <serverdata>
           <mappings>
@@ -83,6 +97,13 @@
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="wjm@219.228.135.235:9001 key (2)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/sdb2/wjm/code/OTLA-ReID" local="$PROJECT_DIR$" />
           </mappings>
         </serverdata>
       </paths>

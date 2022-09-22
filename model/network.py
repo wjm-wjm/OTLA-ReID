@@ -80,16 +80,15 @@ class DiscriminateNet(nn.Module):
         self.relu2 = nn.ReLU()
         self.dropout1 = nn.Dropout(0.5)
         self.dropout2 = nn.Dropout(0.5)
-        self.bn2 = nn.BatchNorm1d(input_dim // 2)
-        self.bn2.bias.requires_grad_(False)
         self.bn = nn.BatchNorm1d(class_num)
+        self.bn2 = nn.BatchNorm1d(input_dim // 2)
         self.bn.bias.requires_grad_(False)
+        self.bn2.bias.requires_grad_(False)
         self.sigmoid = nn.Sigmoid()
 
         self.ad_layer1.apply(weights_init_kaiming)
         self.ad_layer2.apply(weights_init_kaiming)
         self.ad_layer3.apply(weights_init_classifier)
-        self.bn2.apply(weights_init_kaiming)
 
     def forward(self, x):
         x = self.ad_layer1(x)

@@ -20,11 +20,11 @@ lr: 0.0035                   # learning rate: 0.0035 for adam
 
 ## normal parameters
 file_name: otla-reid/        # log file name
-setting: semi-supervised     # training setting: supervised or semi-supervised or unsupervised
-train_visible_image_path: ../../dataset/RegDB/train_rgb_resized_spcl_uda_msmt2regdbrgb_trial1_img.npy   # the stored visible image path getting from USL-ReID or UDA-ReID methods for unsupervised setting
-train_visible_label_path: ../../dataset/RegDB/train_rgb_resized_spcl_uda_msmt2regdbrgb_trial1_label.npy   # the stored visible label path getting from USL-ReID or UDA-ReID methods for unsupervised setting
+setting: unsupervised     # training setting: supervised or semi-supervised or unsupervised
+train_visible_image_path: ../../dataset/RegDB/spcl_uda_market1501TOregdb_rgb_train_rgb_resized_img.npy   # the stored visible image path getting from USL-ReID or UDA-ReID methods for unsupervised setting
+train_visible_label_path: ../../dataset/RegDB/spcl_uda_market1501TOregdb_rgb_train_rgb_resized_label.npy   # the stored visible label path getting from USL-ReID or UDA-ReID methods for unsupervised setting
 seed: 0                      # random seed
-gpu: 0                       # gpu device ids for CUDA_VISIBLE_DEVICES
+gpu: 1                       # gpu device ids for CUDA_VISIBLE_DEVICES
 model_path: save_model/      # model save path
 log_path: log/               # log save path
 vis_log_path: vis_log/       # tensorboard log save path

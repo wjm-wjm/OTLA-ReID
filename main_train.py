@@ -154,7 +154,7 @@ def main_worker(args, args_main):
     ## define loss functions
     criterion = []
     criterion_id = nn.CrossEntropyLoss()  # id loss
-    criterion.append(criterion_id.to(device))
+    criterion.append(criterion_id)
     criterion_tri = TripletLoss(margin=args.margin)  # triplet loss
     criterion.append(criterion_tri)
     criterion_dis = nn.BCELoss()
