@@ -68,7 +68,7 @@ def main_worker(args, args_main):
     ## load data
     print("==========\nargs_main:{}\n==========".format(args_main))
     print("==========\nargs:{}\n==========".format(args))
-    print("==> loading data...")
+    print("==> Loading data...")
 
     normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
     transform_train_rgb = transforms.Compose([
@@ -149,7 +149,7 @@ def main_worker(args, args_main):
             print("==> Loading checkpoint {} (epoch {})".format(resume_path, start_epoch))
         else:
             print("==> No checkpoint is found at {}".format(resume_path))
-    print("start epoch: {}, end epoch: {}".format(start_epoch, end_epoch))
+    print("Start epoch: {}, end epoch: {}".format(start_epoch, end_epoch))
 
     ## define loss functions
     criterion = []
@@ -166,13 +166,13 @@ def main_worker(args, args_main):
     optimizer = select_optimizer(args, main_net)
 
     ## start training and testing
-    print("==> start training...")
+    print("==> Start training...")
     best_acc = 0
     train_thermal_pseudo_label = np.random.randint(0, n_class, len(trainset.train_thermal_label))
     for epoch in range(start_epoch, end_epoch - start_epoch):
         end = time.time()
 
-        print("==> preparing data loader...")
+        print("==> Preparing data loader...")
         if args.setting == "unsupervised" or args.setting == "semi-supervised":
             if epoch == 0:
                 sampler = SemiIdentitySampler_randomIR(trainset.train_color_label, train_thermal_pseudo_label, color_pos, args.num_pos, args.train_batch_size, args.dataset_num_size)
@@ -195,7 +195,7 @@ def main_worker(args, args_main):
 
         # training
         trainer(args, epoch, main_net, adjust_learning_rate, optimizer, trainloader, criterion, writer=writer)
-        print("training time per epoch: {:.3f}".format(time.time() - end))
+        print("Training time per epoch: {:.3f}".format(time.time() - end))
 
         if epoch % args.eval_epoch == 0:
             if args.dataset == "sysu":
