@@ -48,7 +48,7 @@ def main_worker(args, args_main):
     ## load data
     print("==========\nargs_main:{}\n==========".format(args_main))
     print("==========\nargs:{}\n==========".format(args))
-    print("==> loading data...")
+    print("==> Loading data...")
 
     normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
     transform_test = transforms.Compose([
