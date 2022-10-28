@@ -1,6 +1,8 @@
 # Optimal Transport for Label-Efficient Visible-Infrared Person Re-Identification (OTLA-ReID)
 This is Official Repository for "Optimal Transport for Label-Efficient
-Visible-Infrared Person Re-Identification", *ECCV 2022*. This work is done at the DMCV Laboratory of East China Normal University. You can link at [DMCV-Lab](https://dmcv-ecnu.github.io/) to find DMCV Laboratory website page.
+Visible-Infrared Person Re-Identification" ([PDF](https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136840091.pdf), [Supplementary Material](https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136840091-supp.pdf)), which is accepted by *ECCV 2022*. This work is done at the DMCV Laboratory of East China Normal University. You can link at [DMCV-Lab](https://dmcv-ecnu.github.io/) to find DMCV Laboratory website page.
+
+![main_figure](./image/main_figure.png)
 
 ### Update:
 **[2022-7-17]** Semi-supervised setting and supervised setting can be run with current code. Unsupervised setting will be updated with a few of days.
@@ -8,6 +10,8 @@ Visible-Infrared Person Re-Identification", *ECCV 2022*. This work is done at th
 **[2022-7-21]** Update some critical informtion of REAMDE.md.
 
 **[2022-9-22]** Update the code of SpCL-master, which can be used to generator pseudo labels of visible modality for unsupervised setting.
+
+**[2022-10-28]** Update the paper link.
 
 ## Requirements
 + python 3.7.11

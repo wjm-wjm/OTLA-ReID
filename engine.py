@@ -3,7 +3,7 @@ import numpy as np
 import torch
 from torch.autograd import Variable
 from utils import AverageMeter
-from eval_metrics import  eval_regdb, eval_sysu
+from eval_metrics import eval_regdb, eval_sysu
 
 
 def trainer(args, epoch, main_net, adjust_learning_rate, optimizer, trainloader, criterion, writer=None, print_freq=50):
