@@ -61,6 +61,18 @@ cd OTLA-ReID/
 python main_test.py --config config/config_sysu.yaml --resume --resume_path ./sysu_semi-supervised_otla-reid/sysu_save_model/best_checkpoint.pth
 ```
 
+## Citation
+If you find this code useful for your research, please cite our paper
+```
+@inproceedings{wang2022optimal,
+  title={Optimal Transport for Label-Efficient Visible-Infrared Person Re-Identification},
+  author={Wang, Jiangming and Zhang, Zhizhong and Chen, Mingang and Zhang, Yi and Wang, Cong and Sheng, Bin and Qu, Yanyun and Xie, Yuan},
+  booktitle={European Conference on Computer Vision},
+  pages={93--109},
+  year={2022},
+  organization={Springer}
+}
+```
 
 ## Acknowledgements
 This work is developed based on repositories of [SeLa(ICLR 2020)](https://github.com/yukimasano/self-label), [DDAG(ECCV 2020)](https://github.com/mangye16/DDAG), [SpCL(NIPS 2020)](https://github.com/yxgeee/SpCL), [MMT(ICLR 2020)](https://github.com/yxgeee/MMT), [HCD(ICCV 2021)](https://github.com/tangshixiang/HCD). We sincerely thanks all developers of these high-quality repositories.
