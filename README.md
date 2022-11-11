@@ -13,6 +13,7 @@ Visible-Infrared Person Re-Identification" ([PDF](https://www.ecva.net/papers/ec
 
 **[2022-10-28]** Update the paper link.
 
+
 ## Requirements
 + python 3.7.11
 + numpy 1.21.4
@@ -62,7 +63,7 @@ python main_test.py --config config/config_sysu.yaml --resume --resume_path ./sy
 ```
 
 ## Citation
-If you find this code useful for your research, please cite our paper
+If you find this code useful for your research, please cite our paper:
 ```
 @inproceedings{wang2022optimal,
   title={Optimal Transport for Label-Efficient Visible-Infrared Person Re-Identification},
